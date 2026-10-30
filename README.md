@@ -15,44 +15,42 @@ This project sets up a virtual cybersecurity and penetration-testing lab using V
 
 ### Step 1. Install 7-Zip & VirtualBox
 
-![Install 7-Zip and VirtualBox](images/1-screenshot-VirtualBox.png)
+![Install 7-Zip and VirtualBox](1-screenshot-VirtualBox.png)
 
 ### Step 2. Create the NAT Network
 
-![Create NAT Network](images/2-screenshot-VB-networksettings.png)
+![Create NAT Network](2-screenshot-VB-networksettings.png)
 
 ### Step 3. Import Kali Linux
 
-![Import Kali Linux](images/3-screenshot-Kali-Linux.png)
+![Import Kali Linux](3-screenshot-Kali-Linux.png)
 
 ### Step 4. Configure the Kali Linux Network (Static IP)
 
-![Static IP Configuration](images/4-screenshot-KL-networksettings.png)
+![Static IP Configuration](4-screenshot-KL-networksettings.png)
 
 ### Step 5. Create a Clean VM Snapshot
 
-![Clean VM Snapshot](images/5-screenshot-snapshot.png)
+![Clean VM Snapshot](5-screenshot-snapshot.png)
 
 ### Step 6. Functionality Verification
 
-![Functionality Verification](images/6-screenshot-KL-testing.png)
+![Functionality Verification](6-screenshot-KL-testing.png)
 
 ## Lab Verification
 
 | Test | Command | Screenshot |
 |------|---------|------------|
-| Check IP address | `ip a` | <img src="images/ip-a.png" width="400"> |
-| Test gateway | `ping 10.0.0.1` | <img src="images/ping-1001.png" width="400"> |
-| Test Internet connectivity | `ping 8.8.8.8` | <img src="images/ping-8888.png" width="400"> |
-| Test DNS resolution | `nslookup networkwalks.com` | <img src="images/nslookup.png" width="400"> |
-| Verify Nmap | `nmap --version` | <img src="images/nmap.png" width="400"> |
-| Verify snapshot | Restore snapshot and run `ip a` | <img src="images/restored-snap.png" width="400"> |
+| Check IP address | `ip a` | <img src="ip-a.png" width="400"> |
+| Test gateway | `ping 10.0.0.1` | <img src="ping-1001.png" width="400"> |
+| Test Internet connectivity | `ping 8.8.8.8` | <img src="ping-8888.png" width="400"> |
+| Test DNS resolution | `nslookup networkwalks.com` | <img src="nslookup.png" width="400"> |
+| Verify Nmap | `nmap --version` | <img src="nmap.png" width="400"> |
+| Verify snapshot | Restore snapshot and run `ip a` | <img src="restored-snap.png" width="400"> |
 
 ## Problems Encountered and Solutions
 
 **Internet Connectivity After Static IP Configuration:** I set up a static IP and tested it, and it worked. After I shut down the VM and opened it again, the connection was gone. To fix it, I ran `sudo dhclient eth0` in the terminal. This asked the DHCP server to give the `eth0` interface an IP address, and the connection worked again.
-
-![dhclient Fix](images/problem-dhclient.png)
 
 ## 5. What I Learned
 
